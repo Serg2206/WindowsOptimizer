@@ -1,0 +1,81 @@
+
+# PowerShell logs
+*.log
+*.logs
+
+# PowerShell test files
+*.Tests.ps1
+TestResults/
+
+# Build artifacts
+bin/
+obj/
+out/
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# JetBrains IDEs
+.idea/
+*.iml
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*~
+
+# PowerShell module files
+PSGetModuleInfo.xml
+
+# Package files
+*.nupkg
+*.nuget.props
+*.nuget.targets
+
+# Backup files
+*.bak
+*.backup
+
+# System Files
+*.sys
+*.dll
+*.exe
+
+# Test coverage
+coverage/
+*.coverage
+
+# Debug files
+*.pdb
