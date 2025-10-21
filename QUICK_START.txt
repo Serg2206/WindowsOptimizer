@@ -1,0 +1,49 @@
+╔═══════════════════════════════════════════════════════════════╗
+║     WindowsOptimizer - БЫСТРЫЙ СТАРТ                          ║
+╚═══════════════════════════════════════════════════════════════╝
+
+📌 ШАГ 1: Создайте репозиторий на GitHub (30 секунд)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Откройте: https://github.com/new
+
+Заполните:
+  Repository name: WindowsOptimizer
+  Description: Windows optimization and configuration tool
+  Visibility: Public (или Private)
+
+⚠️ ВАЖНО: НЕ добавляйте README, .gitignore или LICENSE!
+
+Нажмите: [Create repository]
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🚀 ШАГ 2: Загрузите код (автоматически)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Выполните одну команду:
+
+    bash /home/ubuntu/WindowsOptimizer/push_to_github.sh
+
+Или вручную:
+
+    cd /home/ubuntu/WindowsOptimizer
+    git remote add origin https://github.com/Serg2206/WindowsOptimizer.git
+    git push -u origin main
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ ГОТОВО!
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Ваш репозиторий: https://github.com/Serg2206/WindowsOptimizer
+
+Содержимое:
+  ✓ WindowsOptimizer.ps1 (11.6 KB)
+  ✓ README.md (9.3 KB)
+  ✓ LICENSE (MIT)
+  ✓ .gitignore
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+❓ Проблемы?
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Читайте: /home/ubuntu/WindowsOptimizer/GITHUB_SETUP_INSTRUCTIONS.md
+Или: /home/ubuntu/WindowsOptimizer_GitHub_Setup_Summary.md
