@@ -2,50 +2,50 @@ name: Create Automated Pull Request
 
 on:
   push:
-      branches:
-            - 'automation/*'
-                paths:
-                      - 'README.md'
-                            - '.github/workflows/release.yml'
-                                  - 'RELEASE_TEMPLATE.md'
+    branches:
+      - 'automation/*'
+    paths:
+      - 'README.md'
+      - '.github/workflows/release.yml'
+      - 'RELEASE_TEMPLATE.md'
 
-                                  permissions:
-                                    contents: write
-                                      pull-requests: write
+permissions:
+  contents: write
+  pull-requests: write
 
-                                      jobs:
-                                        create-pull-request:
-                                            runs-on: ubuntu-latest
+jobs:
+  create-pull-request:
+    runs-on: ubuntu-latest
 
-                                                    steps:
-                                                          - name: Checkout repository
-                                                                  uses: actions/checkout@v4
-                                                                          with:
-                                                                                    fetch-depth: 0
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-                                                                                          - name: Create Pull Request
-                                                                                                  uses: peter-evans/create-pull-request@v5
-                                                                                                          with:
-                                                                                                                    token: ${{ secrets.GITHUB_TOKEN }}
-                                                                                                                              commit-message: 'docs: обновлние документации и workflow'
-                                                                                                                                        branch: ${{ github.ref_name }}
-                                                                                                                                                  base: main
-                                                                                                                                                            title: 'Update README and workflows'
-                                                                                                                                                                      body: |
-                                                                                                                                                                                  ## Автоматическое обновление окументации
-                                                                                                                                                                                              
-                                                                                                                                                                                                          тот PR был создан автоматически при изменении следующих файлов:
-                                                                                                                                                                                                                      - README.md
-                                                                                                                                                                                                                                  - .github/workflows/release.yml
-                                                                                                                                                                                                                                              - RELEASE_TEMPLATE.md
-                                                                                                                                                                                                                                                          
-                                                                                                                                                                                                                                                                      ### Изменения
-                                                                                                                                                                                                                                                                                  Пожалуйста, проверьте и утвердите изменения перед слиянием в основную ветку.
-                                                                                                                                                                                                                                                                                              
-                                                                                                                                                                                                                                                                                                          ---
-                                                                                                                                                                                                                                                                                                                      🤖 Этот PR создан автоматически через GitHub Actions
-                                                                                                                                                                                                                                                                                                                                draft: true
-                                                                                                                                                                                                                                                                                                                                          delete-branch: false
-                                                                                                                                                                                                                                                                                                                                                    labels: |
-                                                                                                                                                                                                                                                                                                                                                                automation
-                                                                                                                                                                                                                                                                                                                                                                            documentation
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'docs: обновление документации и workflow'
+          branch: ${{ github.ref_name }}
+          base: main
+          title: 'Update README and workflows'
+          body: |
+            ## Автоматическое обновление документации
+
+            Этот PR был создан автоматически при изменении следующих файлов:
+            - README.md
+            - .github/workflows/release.yml
+            - RELEASE_TEMPLATE.md
+
+            ### Изменения
+            Пожалуйста, проверьте и утвердите изменения перед слиянием в основную ветку.
+
+            ---
+            🤖 Этот PR создан автоматически через GitHub Actions
+          draft: true
+          delete-branch: false
+          labels: |
+            automation
+            documentation

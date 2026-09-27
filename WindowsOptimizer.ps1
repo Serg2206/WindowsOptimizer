@@ -1,4 +1,4 @@
-
+﻿
 <#
 .SYNOPSIS
     Полнофункциональный скрипт оптимизации Windows 11
@@ -87,13 +87,14 @@ function Clear-TemporaryFiles {
 }
 
 # Функция очистки корзины
-function Clear-RecycleBin {
+function Clear-RecycleBinSafe {
     Write-ColorOutput "`n=== Очистка корзины ===" "Cyan"
     
     try {
         Show-Progress -Activity "Очистка корзины" -Status "Удаление файлов из корзины..." -PercentComplete 50
         
-        Clear-RecycleBin -Force -ErrorAction Stop
+        # Явно вызываем системный командлет: функция с тем же именем вызывала саму себя (бесконечная рекурсия)
+        Microsoft.PowerShell.Management\Clear-RecycleBin -Force -ErrorAction Stop
         
         Write-Progress -Activity "Очистка корзины" -Completed
         Write-ColorOutput "✓ Корзина успешно очищена" "Green"
@@ -225,7 +226,7 @@ function Start-WindowsOptimization {
     
     # Выполнение задач оптимизации
     Clear-TemporaryFiles
-    Clear-RecycleBin
+    Clear-RecycleBinSafe
     Invoke-SystemFileCheck
     Optimize-Disks
     
